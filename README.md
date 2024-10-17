@@ -1,0 +1,1 @@
+![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/LeviSnoot/fnfest-artwork-store/fetch-album-art.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=fff&label=Update)
