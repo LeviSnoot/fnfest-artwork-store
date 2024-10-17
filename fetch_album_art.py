@@ -1,6 +1,7 @@
 import requests
 import os
 import time
+import subprocess
 
 API_URL = "https://fortnitecontent-website-prod07.ol.epicgames.com/content/api/pages/fortnite-game/spark-tracks"
 IMAGE_DIR = "album_art"
@@ -44,7 +45,12 @@ def download_images(urls, directory):
             print(f"Downloaded {image_name} ({index + 1}/{total_images}) to {directory}")
             time.sleep(3)  # Wait for 3 seconds between downloads
 
+def switch_to_gh_pages_branch():
+    print("Switching to gh-pages branch...")
+    subprocess.run(["git", "checkout", "gh-pages"], check=True)
+
 if __name__ == "__main__":
+    switch_to_gh_pages_branch()
     album_art_urls, thumbnail_urls = fetch_album_art_urls()
     download_images(album_art_urls, IMAGE_DIR)
     download_images(thumbnail_urls, THUMBNAIL_DIR)
